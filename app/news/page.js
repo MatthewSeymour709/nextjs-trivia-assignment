@@ -4,8 +4,6 @@ import {client} from "@/sanity/lib/client"
 import { urlFor } from "@/sanity/lib/image";
 
 
-
-
 export default async function NewsItem() {    
     
     const NEWS_QUERY = defineQuery("*[_type=='newsItem'][0]")
