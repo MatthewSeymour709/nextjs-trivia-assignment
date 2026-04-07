@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 export default async function CharactersPage() {
-    const response = await fetch("https://rickandmortyapi.com/api/character");
+    const response = await fetch("http://localhost:3000/api/characters");
 
     if (!response.ok) {
         throw new Error("Failed to fetch characters");
     }
 
     const data = await response.json();
-    const characters = data.results;
+    const characters = Array.isArray(data) ? data : data?.results ?? [];
 
     return (
         <div>
